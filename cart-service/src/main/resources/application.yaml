@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: cart-service
+  cloud:
+    consul:
+      host: ${CONSUL_HOST:localhost}
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${random.value}
+    loadbalancer:
+      ribbon:
+        enabled: false
